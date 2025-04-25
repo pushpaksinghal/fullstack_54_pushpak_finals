@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Book</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Book - <%= book.title %></h1>
+    <form action="/edit/<%= book.id %>" method="POST">
+      <input type="text" name="title" value="<%= book.title %>" required />
+      <input type="text" name="author" value="<%= book.author %>" />
+      <input type="date" name="published_on" value="<%= book.published_on.toISOString().substring(0, 10) %>" />
+      <input type="text" name="genre" value="<%= book.genre %>" />
+      <input type="number" name="rating" value="<%= book.rating %>" step="0.1" />
+      <input type="submit" value="Update Book" />
+    </form>
+  </div>
+</body>
+</html>
